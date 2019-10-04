@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mi_primera_app/app/common_widgets/custom_raised_button.dart';
 import 'package:mi_primera_app/app/sign_in/sign_in_button.dart';
+import 'package:mi_primera_app/app/sign_in/social_sign_in_button.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -31,20 +31,17 @@ class SignInPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          CustomRaisedButton(
-            child: Image.asset('images/google-logo.png'),
-            color: Colors.white,
-            onPressed: () {},
-          ),
-          SizedBox(height: 8.0),
-          SignInButton(
+          SizedBox(height: 40.0),
+          SocialSignInButton(
+            assetName: 'images/google-logo.png',
             text: 'Ingresa con Google',
             textColor: Colors.black87,
             color: Colors.white,
             onPressed: () {},
           ),
           SizedBox(height: 8.0),
-          SignInButton(
+          SocialSignInButton(
+            assetName: 'images/facebook-logo.png',
             text: 'Ingresa con FaceBook',
             textColor: Colors.black87,
             color: Colors.blueAccent,

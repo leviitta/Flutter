@@ -4,18 +4,16 @@ import 'package:mi_primera_app/app/sign_in/social_sign_in_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInPage extends StatelessWidget {
-  
   SignInPage({@required this.onSignIn});
   final Function(FirebaseUser) onSignIn;
 
-  Future<void> _signInAnonymously() async{
-    try{
-      FirebaseUser user = await FirebaseAuth.instance.signInAnonymously();
+  Future<void> _signInAnonymously() async {
+    try {
+      FirebaseUser user = (await FirebaseAuth.instance.signInAnonymously()) as FirebaseUser;
       onSignIn(user);
-    }catch(e){
+    } catch (e) {
       print(e.toString());
     }
-    
   }
 
   @override

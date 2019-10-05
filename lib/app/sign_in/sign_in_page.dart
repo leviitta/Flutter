@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:mi_primera_app/app/sign_in/sign_in_button.dart';
 import 'package:mi_primera_app/app/sign_in/social_sign_in_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInPage extends StatelessWidget {
+  
+  SignInPage({@required this.onSignIn});
+  final Function(FirebaseUser) onSignIn;
+
+  Future<void> _signInAnonymously() async{
+    try{
+      FirebaseUser user = await FirebaseAuth.instance.signInAnonymously();
+      onSignIn(user);
+    }catch(e){
+      print(e.toString());
+    }
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
       appBar: AppBar(
-        title: Text('time Tracker'),
+        title: Text('Matroneria'),
         elevation: 10.0,
       ),
       body: _buildContent(),
@@ -24,7 +39,7 @@ class SignInPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Text(
-            'Ingreso',
+            'Inicio sesión',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 32.0,
@@ -43,14 +58,14 @@ class SignInPage extends StatelessWidget {
           SocialSignInButton(
             assetName: 'images/facebook-logo.png',
             text: 'Ingresa con FaceBook',
-            textColor: Colors.black87,
-            color: Colors.blueAccent,
+            textColor: Colors.white,
+            color: Color(0xFF334D92),
             onPressed: () {},
           ),
           SizedBox(height: 8.0),
           SignInButton(
             text: 'Ingresa con Email',
-            textColor: Colors.black87,
+            textColor: Colors.white,
             color: Colors.teal[700],
             onPressed: () {},
           ),
@@ -63,9 +78,9 @@ class SignInPage extends StatelessWidget {
           SizedBox(height: 8.0),
           SignInButton(
             text: 'Ingreso anonimo',
-            textColor: Colors.black87,
+            textColor: Colors.white,
             color: Colors.teal[700],
-            onPressed: () {},
+            onPressed: _signInAnonymously,
           ),
         ],
       ),

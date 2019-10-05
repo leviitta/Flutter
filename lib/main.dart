@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mi_primera_app/app/landing_page.dart';
+import 'package:mi_primera_app/services/auth.dart';
 
 void main(){
   runApp(MyApp());
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: LandingPage(),
+      home: LandingPage(
+        auth: Auth(),
+      ),
     );
   }
 }

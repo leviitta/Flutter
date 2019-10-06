@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hospital Barros Luco Matronas</string> 
+    <string name="facebook_app_id">537055360382310</string> 
+    <string name="fb_login_protocol_scheme">fb537055360382310</string>
+
+</resources>

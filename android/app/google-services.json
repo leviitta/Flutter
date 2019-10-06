@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "243202789484-7j35hbvpa871fk7avjg8f4ickpf05hjr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mi_primera_app",
+            "certificate_hash": "4da33c52c8e0699d057807f2dcc6a1b4bee19ffb"
+          }
+        },
+        {
           "client_id": "243202789484-8h9nv19cq2ltuiidh9bdtlfg9m9oqitl.apps.googleusercontent.com",
           "client_type": 3
         }

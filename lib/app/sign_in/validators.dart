@@ -1,5 +1,4 @@
-
-abstract class StringValidator{
+abstract class StringValidator {
   bool isValid(String value);
 }
 

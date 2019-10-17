@@ -5,15 +5,13 @@ import 'package:mi_primera_app/app/common_widgets/platform_alert_dialog.dart';
 import 'package:mi_primera_app/app/common_widgets/platform_exception_alert_dialog.dart';
 import 'package:mi_primera_app/app/home/models/job.dart';
 import 'package:mi_primera_app/services/database.dart';
-import 'package:provider/provider.dart';
 
 class EditJobPage extends StatefulWidget {
   const EditJobPage({Key key,@required this.database, this.job}) : super(key: key);
   final Database database;
   final Job job;
 
-  static Future<void> show(BuildContext context, {Job job}) async {
-    final database = Provider.of<Database>(context);
+  static Future<void> show(BuildContext context, {Database database,Job job}) async { 
     await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => EditJobPage(database: database ,job: job),
